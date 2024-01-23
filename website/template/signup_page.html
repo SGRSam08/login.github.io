@@ -1,0 +1,162 @@
+
+<html>
+<head>
+    <title>Signup Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,400;1,500&family=Raleway:wght@100;200;300;400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="icon" type="image/jpg" href="../static/icon.png">
+
+    <style>
+        body{
+            font-family: 'Raleway';
+            background-image: url(../static/backy.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        marquee{
+            font-size: 20px;
+        }
+
+        button{
+            background-color: lightskyblue;
+            border-radius: 25px;
+            width: 25%;
+            padding: 15px;
+            color: black;
+            border: none;
+            float: center;
+            font-size: 18px;
+        }
+        label{
+            font-size: 20px;
+        }
+        form{
+            align-items: center;
+            width: 50%;
+            margin-bottom: 10px;
+            border: 1px solid;
+            margin-left: 380px;
+            border-radius: 25px;
+
+        }
+
+        h1{
+            color: white;
+        }
+
+        input[type=email],input[type=text],input[type=password]{
+            width: 50%;
+            font-size: 15px;
+            margin: 10px 0px;
+            padding: 10px 20px;
+            display: inline-block;
+            border: 2px solid #555fec;
+            border-radius: 18px;
+            box-sizing: border-box;
+        }
+
+
+        input[type=date]{
+            width: 20%;
+            font-size: 15px;
+            margin: 8px 0px;
+            padding: 10px 10px;
+            display: inline-block;
+            border: 2px solid #2a4dfe;
+            border-radius: 18px;
+            box-sizing: border-box;
+        }
+
+        input[type=radio]{
+            height: 12px;
+            width: 18px;
+        }
+
+        input[type=date]{
+            width: 150px;
+        }
+
+        label{
+            color: black;
+        }
+
+        button:hover{
+            background-color: #2a4dfe;
+            transition: 0.2s;
+
+        }
+        .container{
+
+            padding: 50px;
+            background-image: url(../static/blue.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 18px;
+        }
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0px 12px 20px;
+            align-items: top;
+        }
+          
+        img.avatar {
+            width: 30%;
+            border-radius: 50px;
+        }  
+    </style>
+</head>
+<body>
+ 
+        <center><h1>University of Sonic Art</h1></center><br>
+
+
+    <marquee width="100%" direction="right" height="100px" style="font-family: 'Barlow';color: white;">
+        "2023 USA Results are Out Please Visit the Given link to Check Your Results"
+    </marquee>
+
+
+    <div class="alert alert-primary" role="alert" style="font-family: 'Poppins';"> 
+        Note:- "Attention the Admissions Will be Closed on 06-02-2024"
+      </div>
+
+    <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+        <center><div class="container">
+            <div class="imgcontainer">
+                <img src="{% static 'music.gif' %}" alt="Avatar" class="avatar">
+            </div>
+                <label for='first_name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter Your First Name" name='first_name' required style="margin-right: 30px;"><br>
+		        <label for='last_name'><b>Last Name :</b></label>
+		        <input type='text' placeholder='Enter Your Last Name' name='last_name' required style="margin-right: 30px;"><br>
+		        <label for='sex' ><b>Gender: </b></label>
+		        <input type='radio' name='sex' value='male' required>
+		        <label ><b>Male</b></label>
+		        <input type='radio' name='sex' value='female' required>
+		        <label ><b>Female</b></label><br>
+                <label for="dob"><b>DOB</b></label>
+                <input type="date" name="dob" required><br>
+
+            	<label for ='email'><b>Email Id :  </b></label>
+            	<input type="email" placeholder="Enter Your email" name="email" float="right"  required><br> 
+                <label for="hobbies"><b>Hobbies : </b></label>
+                <input type="text" placeholder="Enter Your Hobbies" name="hobbies" style="margin-right: 6px;" required><br>
+                <label for="music"><b>Favourite Music :</b></label>
+                <input type="text" placeholder="Enter Your Fav Music" name="music" style="margin-right: 74px;" required><br>
+            	<label for='password'><b>Password : </b></label>
+            	<input type="text" placeholder="Enter Your Password" name="password" required style="margin-right: 20px;"><br> 
+                <label for="password"><b>Re-enter Password: </b></label>
+                <input type="text" placeholder="Confirm Your Password" name="password" style="margin-right: 100px;"><br>  
+            	<button type="submit"><b>Signup</b></button><br><br>     
+            	Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+            </div></center>
+        </form>
+  
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
